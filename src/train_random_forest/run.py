@@ -98,13 +98,11 @@ def go(args):
     # HINT: use mlflow.sklearn.save_model
 
     path = "random_forest_dir"
-    signature = infer_signature(X_val, y_pred)
 
     mlflow.sklearn.save_model(
         # YOUR CODE HERE
         sk_pipe,
         path,
-        signature = signature,
         serialization_format= mlflow.sklearn.SERIALIZATION_FORMAT_CLOUDPICKLE,
         input_example = X_train.iloc[:5]
     )
